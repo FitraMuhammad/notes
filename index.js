@@ -6,7 +6,7 @@ const app = express()
 
 morgan.token('post', (request, response) =>  JSON.stringify(request.body))
 
-const logger = morgan(':method :url :status :res[content-length] :req[header] :response-time ms :post :port')
+const logger = morgan(':method :url :status :res[content-length] :req[header] :response-time ms :post')
 
 const unknownEndpoint = (request, response) => {
     response.status(404).send({error: 'unknown endpoint'})
